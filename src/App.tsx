@@ -1,10 +1,22 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Pages
 import Index from "./pages/Index";
+import Analysis from "./pages/Analysis";
+import Journal from "./pages/Journal";
+import Vision from "./pages/Vision";
+import Settings from "./pages/Settings";
+import AudioAnalysis from "./pages/AudioAnalysis";
 import NotFound from "./pages/NotFound";
+
+// Components
+import NewAnalysis from "./components/analysis/NewAnalysis";
+import AnalysisHistory from "./components/analysis/AnalysisHistory";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +28,18 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/journal" element={<Journal />} />
+          
+          <Route path="/analysis" element={<Analysis />}>
+            <Route index element={<NewAnalysis />} />
+            <Route path="history" element={<AnalysisHistory />} />
+          </Route>
+          
+          <Route path="/audio-analysis" element={<AudioAnalysis />} />
+          <Route path="/vision" element={<Vision />} />
+          <Route path="/settings" element={<Settings />} />
+          
+          {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
