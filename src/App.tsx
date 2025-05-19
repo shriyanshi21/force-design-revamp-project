@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound";
 // Components
 import NewAnalysis from "./components/analysis/NewAnalysis";
 import AnalysisHistory from "./components/analysis/AnalysisHistory";
+import AnalysisResults from "./components/analysis/AnalysisResults";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,24 @@ const App = () => (
             <Route index element={<NewAnalysis />} />
             <Route path="history" element={<AnalysisHistory />} />
           </Route>
+          
+          {/* New route for analysis results */}
+          <Route 
+            path="/analysis/results/text" 
+            element={<AnalysisResults 
+              type="text" 
+              title="Journal Entries Analysis" 
+              dateRange="May 10-16, 2023" 
+            />} 
+          />
+          <Route 
+            path="/analysis/results/audio" 
+            element={<AnalysisResults 
+              type="audio" 
+              title="Voice Recording Analysis" 
+              dateRange="May 12, 2023" 
+            />} 
+          />
           
           <Route path="/audio-analysis" element={<AudioAnalysis />} />
           <Route path="/vision" element={<Vision />} />

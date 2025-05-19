@@ -30,7 +30,7 @@ const Analysis = () => {
                   : "border-transparent"
               )}
             >
-              New Analysis
+              Run New Analysis
             </Button>
           </Link>
           <Link to="/analysis/history">
@@ -43,7 +43,7 @@ const Analysis = () => {
                   : "border-transparent"
               )}
             >
-              Analysis History
+              My Analysis History
             </Button>
           </Link>
         </div>
