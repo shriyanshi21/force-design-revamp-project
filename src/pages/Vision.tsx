@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Clock, FileImage, Globe, Lightning, MessageSquare } from 'lucide-react';
+import { Clock, FileImage, Globe, Zap, MessageSquare } from 'lucide-react';
 import MainLayout from '@/components/layouts/MainLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -69,7 +69,7 @@ const Vision = () => {
         <Card className="feature-coming-soon">
           <CardHeader>
             <div className="w-12 h-12 bg-force-green/10 rounded-full flex items-center justify-center mb-4">
-              <Lightning className="w-6 h-6 text-force-green" />
+              <Zap className="w-6 h-6 text-force-green" />
             </div>
             <CardTitle className="flex items-center gap-2">
               Force Experiences
